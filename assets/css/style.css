@@ -172,7 +172,6 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  top: 40px;
   box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
 }
 
@@ -1517,6 +1516,12 @@ section {
   margin-bottom: 5px;
   color: var(--logo-color);
 }
+.info ul {
+  padding: 0 0 0 60px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #4b7dab;
+}
 
 .info p {
   padding: 0 0 0 60px;
@@ -1531,7 +1536,7 @@ section {
 }
 
 .info .email:hover i,
-.info .address:hover i,
+.info .clock:hover i,
 .info .phone:hover i {
   background: var(--blue-color);
   color: var(--white-bg);
