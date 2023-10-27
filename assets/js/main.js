@@ -186,38 +186,105 @@
     selector: '.galelry-lightbox'
   });
 
+  var swiper = new Swiper('.swiper-container', {
+    speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
   /**
    * Testimonials slider
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
+  // new Swiper('.testimonials-slider', {
+  //   speed: 600,
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false
+  //   },
+  //   slidesPerView: 'auto',
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true
+  //   },
+  //   breakpoints: {
+  //     320: {
+  //       slidesPerView: 1,
+  //       spaceBetween: 20
+  //     },
 
-      1200: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      }
-    }
-  });
+  //     1200: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 20
+  //     }
+  //   }
+  // });
 
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
+  // new PureCounter({
+  //   selector: ".purecounter",
+  //   decimals: 0,
+  //   currency: false,
+  // });
 
 })()
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Select all elements with the class "purecounter"
+//   var counters = document.querySelectorAll(".purecounter");
+
+//   // Loop through each counter element
+//   counters.forEach(function(counter) {
+//     // Get the end value
+//     var end = parseInt(counter.getAttribute("data-purecounter-end"));
+
+//     // Display the final value with '+' in the prefix
+//     counter.textContent = '+' + end;
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all elements with the class "purecounter"
+  var counters = document.querySelectorAll(".purecounter");
+
+  // Define the interval duration (1 second)
+  var intervalDuration = 1000;
+
+  // Loop through each counter element
+  counters.forEach(function(counter) {
+    // Get the data attributes for prefix and end
+    var prefix = counter.getAttribute("data-purecounter-prefix") || "";
+    var end = parseInt(counter.getAttribute("data-purecounter-end"));
+
+    // Initialize the current value
+    var currentValue = 0;
+
+    // Calculate the step
+    var step = end / (intervalDuration / 1000);
+
+    // Update the counter value at equal intervals
+    var interval = setInterval(function() {
+      // Update the counter text with the prefix and current value
+      counter.textContent = currentValue + prefix;
+
+      // Increment the current value
+      currentValue += step;
+
+      // Check if we've reached the end value
+      if (currentValue >= end) {
+        // Display the final value and stop the interval
+        counter.textContent = end  + prefix;
+        clearInterval(interval);
+      }
+    }, intervalDuration);
+  });
+});

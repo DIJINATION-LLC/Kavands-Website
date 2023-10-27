@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -129,7 +128,7 @@ h6 {
 
 #topbar .contact-info a {
   line-height: 1;
-  color:  var(--black-color);
+  color: var(--black-color);
   transition: 0.3s;
 }
 
@@ -467,13 +466,32 @@ h6 {
 #hero {
   width: 100%;
   height: 90vh;
-  background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
   margin-bottom: -200px;
 }
 
+.banner1 {
+  background: url("../img/hero-bg.jpg") top center;
+  background-size: cover;
+  align-items: center;
+    display: flex;
+    z-index: 1;
+}
+
+.banner2{
+  background: url("../img/banner2.webp") top center;
+  background-size: cover;
+  align-items: center;
+    display: flex;
+    z-index: 1;
+}
+
 #hero .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 #hero h1 {
@@ -543,6 +561,55 @@ h6 {
     height: 110vh;
   }
 }
+
+/* Swiper Container Styles */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  /* Or adjust the height to your preference */
+}
+
+/* Pagination Styles */
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  opacity: 0.7;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--blue-color);
+  /* Change to your desired active color */
+}
+
+/* Navigation Arrow Styles (Optional) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--blue-color);
+  /* Change to your desired arrow color */
+  font-size: 24px;
+}
+
+/* Adjust Slide Content Styles as Needed */
+.swiper-slide h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: var(--logo-color);
+}
+
+/* Add similar styles for h2 and button */
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -661,6 +728,12 @@ section {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+
+.why-us{
+  z-index: 5;
+  position: relative;
+}
+
 .why-us .content {
   padding: 30px;
   background: var(--blue-color);
@@ -1162,12 +1235,14 @@ section {
   margin-bottom: 20px;
   color: var(--logo-color);
 }
+
 .departments .details h4 {
   font-size: 22px;
   font-weight: 600;
   margin: 10px 0;
   color: var(--logo-color);
 }
+
 .departments .details p {
   color: #777777;
 }
@@ -1516,6 +1591,7 @@ section {
   margin-bottom: 5px;
   color: var(--logo-color);
 }
+
 .info ul {
   padding: 0 0 0 60px;
   font-size: 14px;
@@ -1633,7 +1709,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color:  var(--black-color);
+  color: var(--black-color);
   font-size: 14px;
   background: #f1f7fd;
 }
@@ -1667,7 +1743,7 @@ section {
 #footer .footer-top h4 {
   font-size: 22px;
   font-weight: bold;
-  color:  var(--black-color);
+  color: var(--black-color);
   position: relative;
 }
 
@@ -1717,7 +1793,7 @@ section {
 #footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
-  color:  var(--black-color);
+  color: var(--black-color);
   position: relative;
   padding-bottom: 12px;
 }
@@ -1760,7 +1836,7 @@ section {
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color:  var(--black-color);
+  color: var(--black-color);
 }
 
 #footer .social-links a {
