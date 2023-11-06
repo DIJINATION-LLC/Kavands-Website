@@ -473,6 +473,7 @@ h6 {
 .banner1 {
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
+  background-position: center;
   align-items: center;
     display: flex;
     z-index: 1;
@@ -507,6 +508,7 @@ h6 {
   color: var(--logo-color);
   margin: 10px 0 0 0;
   font-size: 24px;
+  width: 60%;
 }
 
 #hero .btn-get-started {
@@ -559,6 +561,12 @@ h6 {
 @media (max-height: 600px) {
   #hero {
     height: 110vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner1{
+    background-position-x: 70%;
   }
 }
 
