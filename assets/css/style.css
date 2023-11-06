@@ -546,6 +546,10 @@ h6 {
     padding-bottom: 63px;
   }
 
+  .banner1{
+    background-position-x: 70%;
+  }
+
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
