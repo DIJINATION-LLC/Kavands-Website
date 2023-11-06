@@ -188,6 +188,8 @@
 
   var swiper = new Swiper('.swiper-container', {
     speed: 600,
+    allowSlideNext: false,
+    enabled: false,
       loop: true,
       autoplay: {
         delay: 5000,
