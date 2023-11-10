@@ -498,9 +498,10 @@ h6 {
 #hero h1 {
   margin: 0;
   font-size: 48px;
+  font-family: myFirstFont;
   font-weight: 700;
   line-height: 56px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: var(--logo-color);
 }
 
@@ -1870,4 +1871,8 @@ section {
   background: #1c84e3;
   color: var(--white-bg);
   text-decoration: none;
+}
+@font-face {
+  font-family: myFirstFont;
+  src: url(../fonts/Blankid-ZVyJB.ttf);
 }
