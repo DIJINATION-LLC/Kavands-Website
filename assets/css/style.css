@@ -502,7 +502,7 @@ h6 {
   font-weight: 700;
   line-height: 56px;
   text-transform: capitalize;
-  color: var(--logo-color);
+  color: var(--white-bg);
 }
 
 #hero h2 {
@@ -552,10 +552,14 @@ h6 {
   }
 
   #hero h1 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 36px;
   }
-
+  #hero h1 span {
+    font-size: 14px;
+    position: absolute;
+    top: -10%;
+  }
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
@@ -1875,4 +1879,12 @@ section {
 @font-face {
   font-family: myFirstFont;
   src: url(../fonts/Blankid-ZVyJB.ttf);
+}
+h1 span
+{
+  font-family: "Poppins";
+  font-size: 26px;
+  position: absolute;
+  bottom: 30%;
+
 }
