@@ -221,6 +221,10 @@ h6 {
     margin: 0 15px 0 0;
     padding: 6px 18px;
   }
+
+  #header .logo img {
+    max-height: 50px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -575,6 +579,11 @@ h6 {
 @media (max-width: 420px) {
   .banner1{
     background-position-x: 70%;
+  }
+  #hero{
+    height: 60vh;
+    top: 3vh;
+    position: relative;
   }
 }
 
