@@ -218,7 +218,7 @@ h6 {
 
 @media (max-width: 768px) {
   .appointment-btn {
-    margin: 0 15px 0 0;
+    /* margin: 0 15px 0 0; */
     padding: 6px 18px;
   }
 
@@ -542,8 +542,17 @@ h6 {
 
 @media (max-width: 992px) {
   #hero {
+    top: 3vh;
     margin-bottom: 0;
-    height: 90vh;
+    height: 57vh;
+  }
+  .carousel-captions {
+    left: 35.5% !important;
+  }
+
+  .carousel-item {
+    height: 409px !important;
+    object-fit: fill;
   }
 
   #hero .container {
@@ -577,21 +586,23 @@ h6 {
     height: 110vh;
   }
 
- 
+
 }
 
 @media (max-width: 420px) {
   .banner1 {
     background-position-x: 70%;
   }
-   .carousel-captions {
+
+  .carousel-captions {
     left: 35.5% !important;
   }
 
   #hero {
-    height: 35vh;
+    height: 55vh;
     top: 3vh;
     position: relative;
+    object-fit: fill;
   }
 }
 
