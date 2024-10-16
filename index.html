@@ -29,6 +29,13 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <body>
 
@@ -50,9 +57,12 @@
             </nav>
             <!-- .navbar -->
 
-            <a href="tel:+469-898-8999" class="appointment-btn scrollto"><span class="d-none d-md-inline small">
-                    Call For Appointment! </br> <strong class="d-flex justify-content-center  ">469-898-8999</strong>
-                </span></a>
+            <a href="tel:+469-898-8999" class="appointment-btn scrollto">
+                <span class=" d-md-inline small">
+                    Call For Appointment! </br>
+                    <strong class="d-none d-md-flex justify-content-center">469-898-8999</strong>
+                </span>
+            </a>
 
         </div>
     </header>
@@ -60,19 +70,47 @@
 
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="swiper-container">
+    <section id="hero" class=" align-items-center w-100">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="80000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 h-75" src="/assets/img/hero-bg.webp" alt="First slide">
+                    <div class="carousel-captions ">
+                        <h1>Comprehensive </br> Dermatology</h1>
+                        <p>Providing care and treatments for all skin types</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-75"
+                        src="https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80"
+                        alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 h-75"
+                        src="https://img.freepik.com/free-photo/colorful-design-with-spiral-design_188544-9588.jpg"
+                        alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+
+            </a>
+        </div>
+        <!-- <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide banner1">
                     <div class="container">
-                        <h1>Comprehensive General <br> & Cosmetic Dermatology <br> in Frisco, TX</h1>
-                        <!-- <h2>Board-certified internist and international fellow of the American Academy of Dermatology
+                        <h1>Comprehensive General <br> & Cosmetic Dermatology <br> in Frisco, TX</h1> -->
+
+        <!-- <h2>Board-certified internist and international fellow of the American Academy of Dermatology
                         </h2>
                         <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
-                    </div>
-                </div>
-                <!-- Add a second slide here with a different background image -->
-                <!-- <div class="swiper-slide banner2">
+        <!-- </div>
+                </div> -->
+        <!-- Add a second slide here with a different background image -->
+        <!-- <div class="swiper-slide banner2">
                     <div class="container">
                         <h1>Sima Kavand, MD</h1>
                         <h2>Board-certified internist and an international fellow
@@ -82,14 +120,11 @@
                             Started</a>
                     </div>
                 </div> -->
-            </div>
-            <!-- <div class="swiper-pagination"></div> -->
-        </div>
+        <!-- </div> -->
+        <div class="swiper-pagination"></div>
+        <!-- </div> -->
     </section>
     <!-- End Hero -->
-
-
-
     <main id="main">
 
         <!-- ======= Why Us Section ======= -->
@@ -319,16 +354,16 @@
                                         <h3>Cosmetic</h3>
                                         <ol>
                                             <li>
-                                                <h4>preventive cosmetic</h4>
-                                                <p>Sima Kavand's, MD. care, our preventive cosmetics reduce wrinkles,
+                                                <h4>Injectable Neurotoxins</h4>
+                                                <p>Sima Kavand's, MD. care, our Injectable Neurotoxins reduce wrinkles,
                                                     offering natural-looking, refreshed appearance.</p>
                                             </li>
-                                            <li>
-                                                <h4>speculative and experimental treatment  for hair growth</h4>
+                                            <!-- <li>
+                                                <h4>speculative and experimental treatment for hair growth</h4>
                                                 <p>Using advanced techniques, we harness natural healing properties to
                                                     promote hair regrowth and density, offering safe, lasting results
                                                     for hair loss.</p>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <h4>Benign skin lesion removal</h4>
                                                 <p>Our Benign Skin Lesion Removal offers precise, minimally invasive
@@ -358,7 +393,7 @@
                     <h2>Make an Appointment</h2>
                     <p>Contact us today to book an appointment for your skin conditions.</p>
                     <a href="tel:+469-898-8999" class="appointment-btn scrollto mt-4 mb-2 small"><span
-                            class="d-none d-md-inline">
+                            class="d-none d-md-inline ">
                             Call Today for an Appointment! </br> <strong
                                 class="d-flex justify-content-center">469-898-8999</strong>
                         </span></a>
@@ -395,7 +430,7 @@
                 <p class="pb-3">Your review helps us improve and provide the best care possible. Share your experience
                     with Dr. Sima Kavand, MD.</p>
                 <a href="https://www.google.com/search?sca_esv=28f8fab5923385a6&sxsrf=ADLYWIKRrXBeiitL5OeE-_O0VRCxSnuh8g:1729023341159&kgmid=/g/11k57jhk9d&q=Dr.+Sima+Kavand,+MD&shndl=30&source=sh/x/loc/uni/m1/1&kgs=bc91b0f7bcbda1b3#lrd=0x864c3b576c2b7c7f:0xa0e31bca9b60b1a4,3,,,,"
-                    class="btn btn-custom"><strong>Write a review!</strong></a>
+                    class=" btn-custom"><strong>Write a review!</strong></a>
             </div>
         </section>
 
@@ -441,31 +476,36 @@
 
                         <li data-aos="fade-up" data-aos-delay="200">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-3" class="collapsed">Are preventive cosmetic and filler safe?<i
-                                    class="bx bx-chevron-down icon-show"></i><i
+                                data-bs-target="#faq-list-3" class="collapsed">Are Injectable Neurotoxins and filler
+                                safe?<i class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    preventive cosmetic has been extensively researched for 30 years and is found to be extremely safe
+                                    Injectable Neurotoxins has been extensively researched for 30 years and is found to
+                                    be
+                                    extremely safe
                                     when handled by well-trained providers.
                                 </p>
                             </div>
                         </li>
 
-                        <li data-aos="fade-up" data-aos-delay="300">
+                        <!-- <li data-aos="fade-up" data-aos-delay="300">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-4" class="collapsed">What do speculative and experimental treatment (platelet-rich plasma)
+                                data-bs-target="#faq-list-4" class="collapsed">What do speculative and experimental
+                                treatment (platelet-rich plasma)
                                 injections do for hair loss on the scalp?
                                 <i class="bx bx-chevron-down icon-show"></i><i
                                     class="bx bx-chevron-up icon-close"></i></a>
                             <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                                 <p>
-                                    speculative and experimental treatment injections in both men and women for hair-loss on the scalp have been found to
+                                    speculative and experimental treatment injections in both men and women for
+                                    hair-loss on the scalp have been found to
                                     be sometimes as effective at hair regrowth as hair transplant for many people and
-                                    speculative and experimental treatment injections are much more affordable than hair transplant.
+                                    speculative and experimental treatment injections are much more affordable than hair
+                                    transplant.
                                 </p>
                             </div>
-                        </li>
+                        </li> -->
 
                         <li data-aos="fade-up" data-aos-delay="400">
                             <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
@@ -488,7 +528,7 @@
         <!-- End Frequently Asked Questions Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        <!-- <section id="contact" class="contact">
             <div class="container">
 
                 <div class="section-title">
@@ -505,7 +545,8 @@
                     referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
             </div>
 
-        </section><!-- End Contact Section -->
+        </section> 
+        End Contact Section -->
 
     </main><!-- End #main -->
 

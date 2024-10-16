@@ -207,7 +207,7 @@ h6 {
   padding: 8px 25px;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 14px !important;
   display: inline-block;
 }
 
@@ -576,15 +576,20 @@ h6 {
   #hero {
     height: 110vh;
   }
+
+ 
 }
 
 @media (max-width: 420px) {
   .banner1 {
     background-position-x: 70%;
   }
+   .carousel-captions {
+    left: 35.5% !important;
+  }
 
   #hero {
-    height: 60vh;
+    height: 35vh;
     top: 3vh;
     position: relative;
   }
@@ -1927,7 +1932,7 @@ h1 span {
   background-color: #fff;
   border-radius: 12px;
   padding: 40px;
- 
+
 }
 
 .section-title {
@@ -1952,7 +1957,7 @@ h1 span {
   margin: 20px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 200px;
-  width: 307px  ;
+  width: 307px;
 }
 
 .testimonial p {
@@ -1979,4 +1984,40 @@ h1 span {
 .btn-custom:hover {
   background: var(--appointment-btn-hover-bg);
   color: var(--white-bg);
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-captions {
+  position: absolute;
+  /* right: 15%; */
+  /* bottom: 20px; */
+  /* left: 15%; */
+  z-index: 10;
+  padding-top: 20px;
+  color: #fff;
+
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.carousel-captions {
+
+  top: 47%;
+  left: 27.5%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
 }
