@@ -200,7 +200,7 @@ h6 {
 * Appointment Button *
 */
 .appointment-btn {
-  margin-left: 25px;
+  margin-left: 10px;
   background: var(--blue-color);
   color: var(--white-bg);
   border-radius: 50px;
@@ -1995,6 +1995,15 @@ h1 span {
 .btn-custom:hover {
   background: var(--appointment-btn-hover-bg);
   color: var(--white-bg);
+}
+@media (max-width: 768px) {
+  .carousel-captions h1 {
+      font-size: 24px; /* Smaller text for mobile */
+  }
+
+  .carousel-captions p {
+      font-size: 16px; /* Adjust subtitle size */
+  }
 }
 
 .carousel-item {

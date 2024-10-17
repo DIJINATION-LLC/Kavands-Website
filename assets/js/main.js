@@ -1,10 +1,4 @@
-/**
-* Template Name: Medilab
-* Updated: Sep 18 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -188,7 +182,7 @@
 
   var swiper = new Swiper('.swiper-container', {
     speed: 600,
-    allowSlideNext: false,
+    allowSlideNext: true,
     enabled: false,
       loop: true,
       autoplay: {
