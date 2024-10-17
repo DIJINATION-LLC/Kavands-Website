@@ -605,16 +605,18 @@ h6 {
   }
 
   #hero {
-    height: 35vh;
+    height: 43vh;
     top: 3vh;
     position: relative;
-    object-fit: fill;
+   
   }
   .imgs{
-    height:50% !important;
+    height: 65% !important;
+    object-fit: fill;
   }
   .carousel-captions{
     bottom: -121px  !important;
+    padding-left: 15px;
   }
 }
 
@@ -2031,7 +2033,7 @@ h1 span {
   padding-top: 20px;
   color: #fff;
 
-  top: 40%;
+  top: 52%;
   left: 30%;
   transform: translate(-50%, -50%);
   text-align: left;
@@ -2039,7 +2041,7 @@ h1 span {
 
 .carousel-captions {
 
-  top: 47%;
+  /* top: 47%; */
   left: 27.5%;
   transform: translate(-50%, -50%);
   color: white;
