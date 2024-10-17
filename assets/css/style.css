@@ -544,14 +544,18 @@ h6 {
   #hero {
     top: 3vh;
     margin-bottom: 0;
-    height: 57vh;
+    height: 65vh;
+  }
+  .imgs{
+    height: 88% !important;
+    object-fit: fill;
   }
   .carousel-captions {
     left: 35.5% !important;
   }
 
   .carousel-item {
-    height: 409px !important;
+    height: 466px  !important;
     object-fit: fill;
   }
 
@@ -593,16 +597,24 @@ h6 {
   .banner1 {
     background-position-x: 70%;
   }
-
+  .carousel-control-next , .carousel-control-prev {
+    display: none !important  ;
+  }
   .carousel-captions {
     left: 35.5% !important;
   }
 
   #hero {
-    height: 55vh;
+    height: 35vh;
     top: 3vh;
     position: relative;
     object-fit: fill;
+  }
+  .imgs{
+    height:50% !important;
+  }
+  .carousel-captions{
+    bottom: -82px;
   }
 }
 
