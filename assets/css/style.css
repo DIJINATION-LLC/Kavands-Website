@@ -614,7 +614,7 @@ h6 {
     height:50% !important;
   }
   .carousel-captions{
-    bottom: -82px;
+    bottom: -121px  !important;
   }
 }
 
@@ -2025,7 +2025,7 @@ h1 span {
 .carousel-captions {
   position: absolute;
   /* right: 15%; */
-  /* bottom: 20px; */
+  bottom: 20px;
   /* left: 15%; */
   z-index: 10;
   padding-top: 20px;
