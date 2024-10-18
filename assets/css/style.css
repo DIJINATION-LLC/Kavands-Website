@@ -1974,11 +1974,13 @@ h1 span {
 
 @media (max-width: 768px) {
   .carousel-captions h1 {
-    font-size: 21px;
+    font-size: 18px;
+    line-height: normal;
   }
 
   .carousel-captions p {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: normal;
   
   }
 }
@@ -1993,9 +1995,9 @@ h1 span {
   bottom: 20px;
   /* left: 15%; */
   z-index: 10;
-  padding-top: 14px;
+  padding-top: 10px;
   color: #fff;
-  top: 52%;
+  top: 50%;
   left: 30%;
   transform: translate(-50%, -50%);
   text-align: left;
