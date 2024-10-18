@@ -563,7 +563,7 @@ h6 {
 
 @media (max-width: 576px) {
   #hero {
-    height: 25vh;
+    height: 26vh;
   }
   .carousel-captions
   {
@@ -1974,13 +1974,12 @@ h1 span {
 
 @media (max-width: 768px) {
   .carousel-captions h1 {
-    font-size: 24px;
-    /* Smaller text for mobile */
+    font-size: 21px;
   }
 
   .carousel-captions p {
     font-size: 16px;
-    /* Adjust subtitle size */
+  
   }
 }
 
@@ -1994,9 +1993,8 @@ h1 span {
   bottom: 20px;
   /* left: 15%; */
   z-index: 10;
-  padding-top: 20px;
+  padding-top: 14px;
   color: #fff;
-
   top: 52%;
   left: 30%;
   transform: translate(-50%, -50%);
@@ -2004,19 +2002,15 @@ h1 span {
 }
 
 .carousel-captions {
-
   /* top: 47%; */
   left: 35%;
   transform: translate(-50%, -50%);
   color: white;
+  width: 47%;
 
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-p {
-  font-size: 1.2rem;
+.carousel-captions p {
+  padding-bottom: 10px;
 }
 
