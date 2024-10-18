@@ -519,9 +519,10 @@ h6 {
   background: var(--blue-hover-color);
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   #hero {
     background-attachment: fixed;
+    height: 35vh;
   }
 }
 
