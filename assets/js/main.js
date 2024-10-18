@@ -1,282 +1,158 @@
-
-(function() {
+(function () {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
+  // Select function helper
   const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
+    el = el.trim();
+    return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
+  };
 
-  /**
-   * Easy event listener function
-   */
+  // Event listener helper function
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
+    let selectEl = select(el, all);
     if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
+      if (Array.isArray(selectEl)) {
+        selectEl.forEach(e => e.addEventListener(type, listener));
       } else {
-        selectEl.addEventListener(type, listener)
+        selectEl.addEventListener(type, listener);
       }
     }
-  }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init();
+  });
 
-  /**
-   * Easy on scroll event listener 
-   */
+  // Scroll event listener
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
+    el.addEventListener('scroll', listener);
+  };
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
+  // Navbar links active state on scroll
+  let navbarlinks = select('#navbar .scrollto', true);
   const navbarlinksActive = () => {
-    let position = window.scrollY + 200
+    let position = window.scrollY + 200;
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
+      if (!navbarlink.hash) return;
+      let section = select(navbarlink.hash);
+      if (section) {
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          navbarlink.classList.add('active');
+        } else {
+          navbarlink.classList.remove('active');
+        }
       }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+    });
+  };
+  window.addEventListener('load', navbarlinksActive);
+  onscroll(document, navbarlinksActive);
 
-  /**
-   * Scrolls to an element with header offset
-   */
+  // Scrolls to an element with header offset
   const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
+    let header = select('#header');
+    let offset = header ? header.offsetHeight : 0;
 
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
+    let element = select(el);
+    if (element) {
+      let elementPos = element.offsetTop;
+      window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
 
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  let selectTopbar = select('#topbar')
+  // Toggle header scrolled class
+  let selectHeader = select('#header');
+  let selectTopbar = select('#topbar');
   if (selectHeader) {
     const headerScrolled = () => {
       if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
+        selectHeader.classList.add('header-scrolled');
         if (selectTopbar) {
-          selectTopbar.classList.add('topbar-scrolled')
+          selectTopbar.classList.add('topbar-scrolled');
         }
       } else {
-        selectHeader.classList.remove('header-scrolled')
+        selectHeader.classList.remove('header-scrolled');
         if (selectTopbar) {
-          selectTopbar.classList.remove('topbar-scrolled')
+          selectTopbar.classList.remove('topbar-scrolled');
         }
       }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
+    };
+    window.addEventListener('load', headerScrolled);
+    onscroll(document, headerScrolled);
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
+  // Back to top button
+  let backtotop = select('.back-to-top');
   if (backtotop) {
     const toggleBacktotop = () => {
       if (window.scrollY > 100) {
-        backtotop.classList.add('active')
+        backtotop.classList.add('active');
       } else {
-        backtotop.classList.remove('active')
+        backtotop.classList.remove('active');
       }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    };
+    window.addEventListener('load', toggleBacktotop);
+    onscroll(document, toggleBacktotop);
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
+  // Mobile nav toggle
+  on('click', '.mobile-nav-toggle', function (e) {
+    let navbar = select('#navbar');
+    if (navbar) {
+      navbar.classList.toggle('navbar-mobile');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
     }
   });
 
-  /**
-   * Preloader
-   */
+  // Mobile nav dropdown activation
+  on('click', '.navbar .dropdown > a', function (e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault();
+      let dropdown = this.nextElementSibling;
+      if (dropdown) {
+        dropdown.classList.toggle('dropdown-active');
+      }
+    }
+  }, true);
+
+  // Scroll with offset on links with class .scrollto
+  on('click', '.scrollto', function (e) {
+    if (select(this.hash)) {
+      e.preventDefault();
+      let navbar = select('#navbar');
+      if (navbar && navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile');
+        let navbarToggle = select('.mobile-nav-toggle');
+        if (navbarToggle) {
+          navbarToggle.classList.toggle('bi-list');
+          navbarToggle.classList.toggle('bi-x');
+        }
+      }
+      scrollto(this.hash);
+    }
+  }, true);
+
+  // Scroll with offset on page load with hash links in the URL
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      scrollto(window.location.hash);
+    }
+  });
+
+  // Preloader
   let preloader = select('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove()
+      preloader.remove();
     });
   }
 
-  /**
-   * Initiate glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
+  // PureCounter logic
+  document.addEventListener("DOMContentLoaded", function () {
+    new PureCounter();
   });
 
-  /**
-   * Initiate Gallery Lightbox 
-   */
-  const galelryLightbox = GLightbox({
-    selector: '.galelry-lightbox'
-  });
+})();
 
-  // var swiper = new Swiper('.swiper-container', {
-  //   speed: 600,
-  //   allowSlideNext: true,
-  //   enabled: false,
-  //     loop: true,
-  //     autoplay: {
-  //       delay: 5000,
-  //       disableOnInteraction: false
-  //     },
-  // });
-  /**
-   * Testimonials slider
-   */
-  // new Swiper('.testimonials-slider', {
-  //   speed: 600,
-  //   loop: true,
-  //   autoplay: {
-  //     delay: 5000,
-  //     disableOnInteraction: false
-  //   },
-  //   slidesPerView: 'auto',
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     type: 'bullets',
-  //     clickable: true
-  //   },
-  //   breakpoints: {
-  //     320: {
-  //       slidesPerView: 1,
-  //       spaceBetween: 20
-  //     },
-
-  //     1200: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 20
-  //     }
-  //   }
-  // });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  // new PureCounter({
-  //   selector: ".purecounter",
-  //   decimals: 0,
-  //   currency: false,
-  // });
-
-})()
-
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Select all elements with the class "purecounter"
-//   var counters = document.querySelectorAll(".purecounter");
-
-//   // Loop through each counter element
-//   counters.forEach(function(counter) {
-//     // Get the end value
-//     var end = parseInt(counter.getAttribute("data-purecounter-end"));
-
-//     // Display the final value with '+' in the prefix
-//     counter.textContent = '+' + end;
-//   });
-// });
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Select all elements with the class "purecounter"
-  var counters = document.querySelectorAll(".purecounter");
-
-  // Define the interval duration (1 second)
-  var intervalDuration = 1000;
-
-  // Loop through each counter element
-  counters.forEach(function(counter) {
-    // Get the data attributes for prefix and end
-    var prefix = counter.getAttribute("data-purecounter-prefix") || "";
-    var end = parseInt(counter.getAttribute("data-purecounter-end"));
-
-    // Initialize the current value
-    var currentValue = 0;
-
-    // Calculate the step
-    var step = end / (intervalDuration / 1000);
-
-    // Update the counter value at equal intervals
-    var interval = setInterval(function() {
-      // Update the counter text with the prefix and current value
-      counter.textContent = currentValue + prefix;
-
-      // Increment the current value
-      currentValue += step;
-
-      // Check if we've reached the end value
-      if (currentValue >= end) {
-        // Display the final value and stop the interval
-        counter.textContent = end  + prefix;
-        clearInterval(interval);
-      }
-    }, intervalDuration);
-  });
-});
