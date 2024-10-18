@@ -180,16 +180,16 @@
     selector: '.galelry-lightbox'
   });
 
-  var swiper = new Swiper('.swiper-container', {
-    speed: 600,
-    allowSlideNext: true,
-    enabled: false,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-  });
+  // var swiper = new Swiper('.swiper-container', {
+  //   speed: 600,
+  //   allowSlideNext: true,
+  //   enabled: false,
+  //     loop: true,
+  //     autoplay: {
+  //       delay: 5000,
+  //       disableOnInteraction: false
+  //     },
+  // });
   /**
    * Testimonials slider
    */

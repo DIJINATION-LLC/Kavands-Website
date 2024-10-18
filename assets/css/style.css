@@ -471,48 +471,33 @@ h6 {
   width: 100%;
   height: 90vh;
   background-size: cover;
-  margin-bottom: -200px;
-}
-
-.banner1 {
-  background: url("../img/hero-bg.webp") top center;
-  background-size: cover;
-  background-position: center;
-  align-items: center;
-  display: flex;
-  z-index: 1;
-}
-
-.banner2 {
-  background: url("../img/banner2.webp") top center;
-  background-size: cover;
-  align-items: center;
-  display: flex;
-  z-index: 1;
-}
-
-#hero .container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 
-#hero h1 {
-  margin: 0;
-  font-size: 50px;
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-captions {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  text-align: left;
+}
+
+.carousel-captions h1 {
+  font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: capitalize;
   color: var(--white-bg);
 }
 
-#hero h2 {
-  color: var(--logo-color);
-  margin: 10px 0 0 0;
-  font-size: 24px;
-  width: 60%;
+.carousel-captions p {
+  font-size: 20px;
+  color: var(--white-bg);
 }
 
 #hero .btn-get-started {
@@ -542,146 +527,91 @@ h6 {
 
 @media (max-width: 992px) {
   #hero {
-    top: 3vh;
-    margin-bottom: 0;
+    height: 75vh;
+  }
+
+  .carousel-captions h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .carousel-captions p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
     height: 65vh;
   }
 
-  .imgs {
-    height: 88% !important;
-    object-fit: fill;
-  }
-
   .carousel-captions {
-    left: 35.5% !important;
+    left: 5%;
+    bottom: 15%;
   }
 
-  .carousel-item {
-    height: 466px !important;
-    object-fit: fill;
+  .carousel-captions h1 {
+    font-size: 28px;
+    line-height: 34px;
   }
 
-  #hero .container {
-    padding-bottom: 63px;
-  }
-
-  .banner1 {
-    background-position-x: 70%;
-  }
-
-  #hero h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  #hero h1 span {
-    font-size: 14px;
-    position: absolute;
-    top: -10%;
-  }
-
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+  .carousel-captions p {
+    font-size: 16px;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-width: 576px) {
   #hero {
-    height: 110vh;
+    height: 25vh;
+  }
+  .carousel-captions
+  {
+    top: 40% !important;
+    width: 60%;
+  }
+  .carousel-captions h1 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
   }
 
-  .hero-txt {
-    margin-left: 0 !important;
-  }
-
-}
-
-@media (max-width: 420px) {
-  .banner1 {
-    background-position-x: 70%;
+  .carousel-captions p {
+    font-size: 14px;
   }
 
   .carousel-control-next,
   .carousel-control-prev {
     display: none !important;
   }
-
-  .carousel-captions {
-    left: 35.5% !important;
-  }
-
-  .hero-txt {
-    margin-left: 0 !important;
-  }
-
-
-  #hero {
-    height: 43vh;
-    top: 3vh;
-    position: relative;
-
-  }
-
-  .imgs {
-    height: 65% !important;
-    object-fit: fill;
-  }
-
-  .carousel-captions {
-    bottom: -121px !important;
-    padding-left: 15px;
-  }
 }
 
-/* Swiper Container Styles */
-.swiper-container {
-  width: 100%;
-  height: 100%;
-  /* Or adjust the height to your preference */
-}
-
-/* Pagination Styles */
+/* Swiper Pagination Styles */
 .swiper-pagination {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   text-align: center;
 }
 
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: #fff;
-  opacity: 0.7;
+  opacity: 0.8;
   margin: 0 5px;
-  cursor: pointer;
   border-radius: 50%;
 }
 
 .swiper-pagination-bullet-active {
   background: var(--blue-color);
-  /* Change to your desired active color */
 }
 
-/* Navigation Arrow Styles (Optional) */
+/* Navigation Arrow Styles */
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--blue-color);
-  /* Change to your desired arrow color */
   font-size: 24px;
 }
 
-/* Adjust Slide Content Styles as Needed */
-.swiper-slide h1 {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  text-transform: uppercase;
-  color: var(--logo-color);
-}
-
-/* Add similar styles for h2 and button */
 
 
 /*--------------------------------------------------------------
@@ -2075,7 +2005,7 @@ h1 span {
 .carousel-captions {
 
   /* top: 47%; */
-  left: 27.5%;
+  left: 35%;
   transform: translate(-50%, -50%);
   color: white;
 
@@ -2089,6 +2019,3 @@ p {
   font-size: 1.2rem;
 }
 
-.hero-txt {
-  margin-left: 8rem;
-}
