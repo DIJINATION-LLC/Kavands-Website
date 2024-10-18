@@ -27,7 +27,12 @@ a:hover {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Raleway", sans-serif;
 }
 
@@ -63,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -209,6 +215,7 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 50px;
   }
 }
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -368,6 +375,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-mobile li:hover>a {
   color: var(--blue-color);
 }
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -447,50 +455,60 @@ h1, h2, h3, h4, h5, h6 {
     height: 55vh;
   }
 }
-  /* Carousel  */
+
+/* Carousel  */
+.carousel-captions {
+  position: absolute;
+  bottom: 20%;
+  /* Default for larger screens */
+  left: 35%;
+  /* Center for larger screens */
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 47%;
+}
+
+@media (max-width: 992px) {
   .carousel-captions {
-    position: absolute;
-    bottom: 20%; /* Default for larger screens */
-    left: 50%; /* Center for larger screens */
-    z-index: 10;
-    transform: translate(-50%, -50%);
-    color: white;
-    width: 47%;
+    bottom: 20px;
+    /* Adjust for medium screens */
+    left: 35%;
+    /* Adjust positioning */
   }
-  
-  @media (max-width: 992px) {
-    .carousel-captions {
-      bottom: 20px; /* Adjust for medium screens */
-      left: 35%; /* Adjust positioning */
-    }
+}
+
+@media (max-width: 768px) {
+  .carousel-captions {
+    left: 40%;
+    /* Adjust for smaller screens */
+    bottom: 15%;
   }
-  
-  @media (max-width: 768px) {
-    .carousel-captions {
-      left: 40%; /* Adjust for smaller screens */
-      bottom: 15%;
-    }
+}
+
+@media (max-width: 576px) {
+  .carousel-item {
+    height: 50vh;
   }
-  
-  @media (max-width: 576px) {
-    .carousel-item{
-      height: 50vh;
-    }
-    .carousel-captions {
-      top: 50% !important; /* Adjust top positioning for smallest screens */
-      width: 50%; /* Adjust width */
-    }
-    
-    .carousel-captions h1{
-      font-size: 1.4rem;
-      line-height: 1.6rem;
-      font-weight: 600;
-    }
-    .carousel-captions p {
-      font-size: 14px;
-    }
+
+  .carousel-captions {
+    top: 50% !important;
+    /* Adjust top positioning for smallest screens */
+    width: 50%;
+    /* Adjust width */
   }
-  
+
+  .carousel-captions h1 {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 600;
+  }
+
+  .carousel-captions p {
+    font-size: 14px;
+  }
+}
+
 
 /* Swiper Pagination Styles */
 .swiper-pagination {
@@ -877,16 +895,18 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: var(--white-bg);
+  background: rgb(241, 247, 253);
   padding: 70px 0 60px;
 }
+
 .counts .count-box {
   padding: 30px;
   width: 100%;
   position: relative;
   text-align: center;
-  background:  var(--white-bg);
+  background: var(--white-bg);
 }
+
 .counts .count-box i {
   position: absolute;
   top: -25px;
@@ -894,7 +914,7 @@ section {
   transform: translateX(-50%);
   font-size: 20px;
   background: var(--blue-color);
-  color:  var(--white-bg);
+  color: var(--white-bg);
   border-radius: 50px;
   display: inline-flex;
   align-items: center;
@@ -902,12 +922,14 @@ section {
   width: 48px;
   height: 48px;
 }
+
 .counts .count-box span {
   font-size: 36px;
   display: block;
   font-weight: 600;
   color: #082744;
 }
+
 .counts .count-box p {
   padding: 0;
   margin: 0;
