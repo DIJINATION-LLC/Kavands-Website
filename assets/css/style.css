@@ -548,7 +548,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f1f7fd;
+  background-color: #f1f7fd !important;
 }
 
 .section-title {
